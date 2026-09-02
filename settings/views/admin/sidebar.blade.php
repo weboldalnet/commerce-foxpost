@@ -1,15 +1,15 @@
-{{-- Foxpost szállítási modul admin menüpontja.
+{{-- FoxPost szállítási modul admin menüpontja.
 
-     Csomagváz: egyelőre nincs admin felülete a modulnak, ezért a menüpont
-     ki van kommentelve — így a `commerce-foxpost:extend --view=sidebar` nem tesz
-     törött linket az admin oldalsávba. A szállítási funkció fejlesztésekor
-     kell aktiválni, a testvércsomagok (commerce-szamlazzhu) mintájára.
+     A webshop-ai-default csomag oldalsávja a bekapcsolt szállítási integrációk
+     beállításlinkjeit magától megjeleníti (Webshop → Beállítások alatt), ezért ez
+     itt ki van kommentelve – különben duplán jelenne meg. Akkor kell aktiválni,
+     ha a FoxPost webshop csomag nélkül, önállóan kerül be egy projektbe.
 
 <div class="mb-1">
     <a class="menu-point collapsed"
        data-toggle="collapse" href="#foxpostCollapse" role="button"
     >
-        <span><i class="fas fa-box mr-1"></i>Foxpost</span>
+        <span><i class="fas fa-box mr-1"></i>FoxPost</span>
         <i class="fa-solid fa-chevron-down"></i>
     </a>
     <div class="collapse collapse-box" id="foxpostCollapse">
