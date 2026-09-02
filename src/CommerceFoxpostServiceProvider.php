@@ -1,13 +1,13 @@
 <?php
 
-namespace Weboldalnet\PackageTemplate;
+namespace Weboldalnet\CommerceFoxpost;
 
 use Illuminate\Support\ServiceProvider;
-use Weboldalnet\PackageTemplate\Support\PackageHelper;
-use Weboldalnet\PackageTemplate\Console\ExtendViewsArticlesCommand;
-use Weboldalnet\PackageTemplate\Console\InstallArticlesCommand;
+use Weboldalnet\CommerceFoxpost\Support\PackageHelper;
+use Weboldalnet\CommerceFoxpost\Console\ExtendViewsCommerceFoxpostCommand;
+use Weboldalnet\CommerceFoxpost\Console\InstallCommerceFoxpostCommand;
 
-class ArticleServiceProvider extends ServiceProvider
+class CommerceFoxpostServiceProvider extends ServiceProvider
 {
     public function boot()
     {
@@ -32,12 +32,14 @@ class ArticleServiceProvider extends ServiceProvider
 
     public function register()
     {
+        $this->mergeConfigFrom(__DIR__.'/../config/commerce-foxpost.php', 'commerce-foxpost');
+
         $this->commands([
-            InstallArticlesCommand::class,
+            InstallCommerceFoxpostCommand::class,
         ]);
 
         $this->commands([
-            ExtendViewsArticlesCommand::class,
+            ExtendViewsCommerceFoxpostCommand::class,
         ]);
     }
 }
